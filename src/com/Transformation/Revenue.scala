@@ -14,17 +14,12 @@ class Revenue extends Utility{
 
     val revenueAccumulator = sparkContext.doubleAccumulator("revenueAccumulator")
 
-    val revenueList = List(salesRDD)
-    salesRDD.foreach(
-      each => println(each+" "+each.getString(0).toDouble)
-
-    )
-    //println(each.getDouble(0).getClass())/
     salesRDD.foreach(each =>
       revenueAccumulator.add {
         each.getString(0).toDouble
       }
     )
+    
     println(revenueAccumulator.value)
   }
 }
