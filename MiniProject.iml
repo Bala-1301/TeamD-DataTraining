@@ -21,5 +21,6 @@
         <jarDirectory url="file://D:/Data/spark-3.0.3-bin-hadoop2.7/jars" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="scala-sdk-2.11.12" level="application" />
   </component>
 </module>
