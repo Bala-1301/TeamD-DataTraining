@@ -8,10 +8,13 @@ import java.io.{File, PrintWriter}
 
 class RevenueImpl {
   def totalRevenue(countryName: String): Double ={
+    //read csv
     val sparkSS= new Utility()
     val ss = sparkSS.sparkSessionBuilder
     val sparkContext = sparkSS.sparkSS()
     sparkSS.readCSV()
+
+    //query
     val salesDF = ss.sql("SELECT Revenue FROM SALES_TABLE where RetailerCountry= '" +
       countryName + "' and Revenue != '0'")
     val salesRDD = salesDF.rdd
@@ -22,6 +25,7 @@ class RevenueImpl {
       }
     )
 
+    //write output to a file
     val totalRevenue = revenueAccumulator.value
     try {
       val fileObject = new File(AppConstants.FILE_OUT_DIR)
