@@ -1,6 +1,9 @@
 package com.transformation
 
-import com.utils.{Utility}
+import com.utils.Utility
+
+import java.io.{File, PrintWriter}
+
 
 
 class RevenueImpl extends Utility{
@@ -18,6 +21,10 @@ class RevenueImpl extends Utility{
       }
     )
     val totalRevenue = revenueAccumulator.value
+    val fileObject = new File("D:\\data\\TotalRevenue.txt")
+    val printWriter = new PrintWriter(fileObject)
+    printWriter.write("Total revenue for the Retailer Country France is :"+totalRevenue)
+    printWriter.close()
     totalRevenue
   }
 }
