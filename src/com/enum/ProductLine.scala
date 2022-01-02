@@ -1,7 +1,8 @@
 package com.`enum`
 
 object ProductLine extends Enumeration {
-  val productLine = Value
+  type ProductLine = Value
+
   val GolfEquipment = Value("Golf Equipment")
 
 }
