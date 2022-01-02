@@ -17,7 +17,7 @@ class RevenueImpl {
         each.getString(0).toDouble
       }
     )
-    val totalRevenue = revenueAccumulator.value
-    totalRevenue
+    
+    println("Total revenue for the Retailer Country France is :"+revenueAccumulator.value)
   }
 }

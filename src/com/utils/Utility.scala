@@ -1,6 +1,5 @@
 package com.utils
 
-import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 
 import scala.io.Source
