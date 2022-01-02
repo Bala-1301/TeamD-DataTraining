@@ -1,3 +1,5 @@
-package com.services trait ProductType {
+package com.services
 
+trait ProductType {
+  def productTypeCount(): Long
 }

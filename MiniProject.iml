@@ -11,16 +11,15 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://D:/Data/spark-3.0.3-bin-hadoop2.7/jars" />
+          <root url="file://$USER_HOME$/spark-3.0.3-bin-hadoop2.7/jars" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://D:/Data/spark-3.0.3-bin-hadoop2.7/jars" />
+          <root url="file://$USER_HOME$/spark-3.0.3-bin-hadoop2.7/jars" />
         </SOURCES>
-        <jarDirectory url="file://D:/Data/spark-3.0.3-bin-hadoop2.7/jars" recursive="false" />
-        <jarDirectory url="file://D:/Data/spark-3.0.3-bin-hadoop2.7/jars" recursive="false" type="SOURCES" />
+        <jarDirectory url="file://$USER_HOME$/spark-3.0.3-bin-hadoop2.7/jars" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/spark-3.0.3-bin-hadoop2.7/jars" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="scala-sdk-2.11.12" level="application" />
   </component>
 </module>

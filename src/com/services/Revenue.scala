@@ -1,3 +1,5 @@
-package com.services trait Revenue {
+package com.services
 
+trait Revenue {
+  def totalRevenue(): Double
 }
