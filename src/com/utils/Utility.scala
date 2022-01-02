@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession
 import scala.io.Source
 
 class Utility {
-
+    //returns spark session
     def sparkSessionBuilder: SparkSession = {
         if(AppConstants.IS_DEV)
             System.setProperty("hadoop.home.dir", "D:\\winutils\\")
@@ -17,12 +17,14 @@ class Utility {
         ss
     }
 
+    //returns spark context
     def sparkSS(): SparkContext ={
         val ss = sparkSessionBuilder
         val sparkContext = ss.sparkContext
         sparkContext
     }
 
+    //function to read csv file
     def readCSV(): Unit ={
         val ss = sparkSessionBuilder
         import ss.implicits._
