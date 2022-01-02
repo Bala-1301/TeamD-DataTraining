@@ -1,6 +1,6 @@
 package com.transformation
 
-import com.utils.Utility
+import com.utils.{AppConstants, Utility}
 
 import java.io.{File, PrintWriter}
 
@@ -25,10 +25,15 @@ class RevenueImpl {
 
     //write output to a file
     val totalRevenue = revenueAccumulator.value
-    val fileObject = new File("D:\\data\\TotalRevenue.txt")
-    val printWriter = new PrintWriter(fileObject)
-    printWriter.write("Total revenue for the Retailer Country France is :"+totalRevenue)
-    printWriter.close()
+    try {
+      val fileObject = new File(AppConstants.FILE_OUT_DIR)
+      val printWriter = new PrintWriter(fileObject)
+      printWriter.write("Total revenue for the Retailer Country France is :"+totalRevenue)
+      printWriter.close()
+    } catch {
+      case e: Exception => println("Error! Can't write to output file")
+    }
+
     totalRevenue
   }
 }
