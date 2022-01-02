@@ -4,7 +4,7 @@ import com.utils.Utility
 
 class ProductType extends Utility  {
   def productTypeCount(): Unit ={
-    val salesDF = ss.sql("SELECT `Producttype` FROM SALES_TABLE where `Productline`= 'Golf Equipment'")
+    val salesDF = ss.sql("SELECT Producttype FROM SALES_TABLE where Productline= 'Golf Equipment'")
 
     val proTypeRDD = salesDF.rdd
 
