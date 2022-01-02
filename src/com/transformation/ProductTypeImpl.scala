@@ -2,7 +2,7 @@ package com.transformation
 
 
 import com.`enum`.ProductLine.ProductLine
-import com.utils.Utility
+import com.utils.{AppConstants, Utility}
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
@@ -24,7 +24,11 @@ class ProductTypeImpl extends Utility  {
 
     val schema = StructType(Array(StructField("ProductTypes", StringType,true)))
     val productTypeDF = ss.createDataFrame(productTypeRow,schema)
-    productTypeDF.write.parquet("D:\\data\\ProductTypeOutput")
+    try {
+      productTypeDF.write.parquet(AppConstants.PARQUET_OUT_DIR)
+    } catch {
+      case e: Exception => println("Error! Can't write to parquet file")
+    }
     val typeCount = finalMap.count()
     typeCount
   }
